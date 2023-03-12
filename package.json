@@ -1,0 +1,20 @@
+{
+  "name": "factorial_challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "seed": "npm run seed --workspace=api",
+    "start:api": "npm run start --workspace=api",
+    "build:api": "npm run build --workspace=api",
+    "start:client": "npm run start --workspace=packages/client",
+    "build:client": "npm run build --workspace=client",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "workspaces": [
+    "packages/api",
+    "packages/client"
+  ]
+}
