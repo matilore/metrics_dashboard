@@ -14,3 +14,9 @@ export const LargeText = styled.p`
   font-size: ${({ theme }) => theme.FONT_SIZES.EXTRA_LARGE};
   font-weight: bold;
 `;
+
+export const AveragesHeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;

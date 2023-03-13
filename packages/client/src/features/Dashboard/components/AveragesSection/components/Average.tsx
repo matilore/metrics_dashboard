@@ -1,6 +1,6 @@
 import React from "react";
 import { AverageProps } from "../contracts";
-import { AverageWrapper, LargeText } from "../styledComponents";
+import { AverageWrapper, LargeText } from "../styleComponents";
 
 const Average = ({ label, value }: AverageProps) => {
   return (

@@ -1,4 +1,5 @@
 import React from "react";
+import { Row, Col } from "react-awesome-styled-grid";
 import MetricSelector from "./components/MetricSelector";
 import Chart from "./components/Chart";
 
@@ -20,15 +21,17 @@ const ChartSection = ({
   metricsToDisplay: { metricId, labels, dataSeries },
 }: ChartSectionProps) => {
   return (
-    <>
-      <h2>My metrics</h2>
-      <p>Check your progress</p>
-      <MetricSelector
-        handleOptionChange={handleOptionChange}
-        selectedOption={selectedOption || "calories"}
-      />
-      <Chart metricId={metricId} labels={labels} dataSeries={dataSeries} />
-    </>
+    <Row>
+      <Col offset={{ xs: 0, md: 1, lg: 0 }} xs={4} lg={12} md={6}>
+        <h2>My metrics</h2>
+        <p>Check your progress</p>
+        <MetricSelector
+          handleOptionChange={handleOptionChange}
+          selectedOption={selectedOption || "calories"}
+        />
+        <Chart metricId={metricId} labels={labels} dataSeries={dataSeries} />
+      </Col>
+    </Row>
   );
 };
 

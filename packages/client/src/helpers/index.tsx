@@ -1,11 +1,11 @@
 export const capitalizeFirstLetter = (string: string): string =>
   string.charAt(0).toUpperCase() + string.slice(1);
 
-function replaceCamelCaseWithSpace(metricId: string): string {
+export const replaceCamelCaseWithSpace = (metricId: string): string => {
   return metricId
     .replace(/([A-Z])/g, " $1")
     .replace(/^./, (str) => str.toUpperCase());
-}
+};
 
 export const formatMetricId = (id: string) =>
   replaceCamelCaseWithSpace(capitalizeFirstLetter(id));

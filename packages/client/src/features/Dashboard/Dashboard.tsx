@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Row, Col } from "react-awesome-styled-grid";
-import { AveragesSection, ChartSection } from "./components";
+import { HeaderSection, AveragesSection, ChartSection } from "./components";
 import { getMetrics, putMetrics } from "./datamodel/api";
-import ModalBody from "@common/Modal";
 import {
   RequiredMetricsInputs,
   MetricsListResponse,
 } from "@features/Dashboard/contracts";
-import {
-  StyledContainer,
-  StyledHeader,
-  DashboardHeaderWrapper,
-  Button,
-  AveragesHeaderWrapper,
-} from "./styleComponents";
+import { StyledContainer } from "./styleComponents";
 import { DEFAULT_SELECTED_METRIC, DEFAULT_RESPONSE_METRICS } from "./constants";
 
 const Dashboard = () => {
@@ -64,38 +56,19 @@ const Dashboard = () => {
 
   return (
     <StyledContainer>
-      <Row>
-        <Col offset={{ xs: 0, md: 1, lg: 0 }} xs={4} lg={12} md={6}>
-          <DashboardHeaderWrapper>
-            <StyledHeader>Welcome to yours dashboard !</StyledHeader>
-            <ModalBody
-              toggleModal={toggleModal}
-              isModalOpen={isModalOpen}
-              postNewMetric={postNewMetric}
-            >
-              <Button>Add a new metric</Button>
-            </ModalBody>
-          </DashboardHeaderWrapper>
-        </Col>
-      </Row>
+      <HeaderSection
+        toggleModal={toggleModal}
+        isModalOpen={isModalOpen}
+        postNewMetric={postNewMetric}
+      />
       {showData && (
         <>
-          <Row>
-            <Col offset={{ xs: 0, md: 1, lg: 0 }} xs={4} lg={12} md={6}>
-              <AveragesHeaderWrapper>
-                <AveragesSection averages={averages || []} />
-              </AveragesHeaderWrapper>
-            </Col>
-          </Row>
-          <Row>
-            <Col offset={{ xs: 0, md: 1, lg: 0 }} xs={4} lg={12} md={6}>
-              <ChartSection
-                handleOptionChange={handleOptionChange}
-                selectedOption={selectedOption}
-                metricsToDisplay={metricsToDisplay}
-              />
-            </Col>
-          </Row>
+          <AveragesSection averages={averages || []} />
+          <ChartSection
+            handleOptionChange={handleOptionChange}
+            selectedOption={selectedOption}
+            metricsToDisplay={metricsToDisplay}
+          />
         </>
       )}
     </StyledContainer>
