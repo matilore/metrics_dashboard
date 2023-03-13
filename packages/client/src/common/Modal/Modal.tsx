@@ -1,25 +1,22 @@
-import React, { useState, ReactNode, ReactElement, cloneElement } from "react";
-import { ModalProvider } from "styled-react-modal";
-import Modal from "styled-react-modal";
+import React, { ReactElement, cloneElement } from "react";
 import Form from "@common/Form";
-
-const StyledModal = Modal.styled`
-  width: 500px;
-  height: 500px;
-  background: white;
-`;
+import { ModalProvider } from "styled-react-modal";
+import { RequiredMetricsInputs } from "@features/Dashboard/contracts";
+import { StyledModal } from "./styleComponents";
 
 interface ModalBodyProps {
   children: ReactElement<{ onClick: () => void }>;
+  toggleModal: () => void;
+  isModalOpen: boolean;
+  postNewMetric: ({ metricId, metricValue }: RequiredMetricsInputs) => void;
 }
 
-const ModalBody = ({ children }: ModalBodyProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  function toggleModal() {
-    setIsOpen(!isOpen);
-  }
-
+const ModalBody = ({
+  children,
+  toggleModal,
+  isModalOpen,
+  postNewMetric,
+}: ModalBodyProps) => {
   const button = cloneElement(children, {
     onClick: toggleModal,
   });
@@ -28,11 +25,11 @@ const ModalBody = ({ children }: ModalBodyProps) => {
     <ModalProvider>
       {button}
       <StyledModal
-        isOpen={isOpen}
+        isOpen={isModalOpen}
         onBackgroundClick={toggleModal}
         onEscapeKeydown={toggleModal}
       >
-        <Form />
+        <Form postNewMetric={postNewMetric} />
       </StyledModal>
     </ModalProvider>
   );

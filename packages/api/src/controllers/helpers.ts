@@ -14,7 +14,7 @@ export interface IFormattedUserMetrics {
   userId: string
   metrics: {
     steps: IFormattedUserMetric
-    max_rate: IFormattedUserMetric
+    maxRate: IFormattedUserMetric
     calories: IFormattedUserMetric
   }
 }
@@ -27,7 +27,7 @@ export function formatUserMetricsResponse({
     userId: userId.toString(),
     metrics: {
       steps: formatUserMetric(metrics.steps.toObject()),
-      max_rate: formatUserMetric(metrics.max_rate.toObject()),
+      maxRate: formatUserMetric(metrics.maxRate.toObject()),
       calories: formatUserMetric(metrics.calories.toObject())
     }
   }

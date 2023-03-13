@@ -1,12 +1,15 @@
-import React, { useState, ChangeEvent } from 'react'
-import { RadioGroup, RadioButton, RadioButtonLabel } from './styledComponents'
-const Selector = () => {
-  const [selectedOption, setSelectedOption] = useState('')
+import React from "react";
+import { RadioGroup, RadioButton, RadioButtonLabel } from "./styledComponents";
 
-  const handleOptionChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSelectedOption(event.target.value)
-  }
+interface SelectorSectionProps {
+  handleOptionChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  selectedOption: string;
+}
 
+const Selector = ({
+  selectedOption,
+  handleOptionChange,
+}: SelectorSectionProps) => {
   return (
     <RadioGroup>
       <div>
@@ -15,7 +18,7 @@ const Selector = () => {
           id="calories"
           name="option"
           value="calories"
-          checked={selectedOption === 'calories'}
+          checked={selectedOption === "calories"}
           onChange={handleOptionChange}
         />
         <RadioButtonLabel htmlFor="calories">Calories</RadioButtonLabel>
@@ -23,13 +26,13 @@ const Selector = () => {
       <div>
         <RadioButton
           type="radio"
-          id="max_rate"
+          id="maxRate"
           name="option"
-          value="max_rate"
-          checked={selectedOption === 'max_rate'}
+          value="maxRate"
+          checked={selectedOption === "maxRate"}
           onChange={handleOptionChange}
         />
-        <RadioButtonLabel htmlFor="max_rate">Max Rate</RadioButtonLabel>
+        <RadioButtonLabel htmlFor="maxRate">Max Rate</RadioButtonLabel>
       </div>
       <div>
         <RadioButton
@@ -37,13 +40,13 @@ const Selector = () => {
           id="steps"
           name="option"
           value="steps"
-          checked={selectedOption === 'steps'}
+          checked={selectedOption === "steps"}
           onChange={handleOptionChange}
         />
         <RadioButtonLabel htmlFor="steps">Steps</RadioButtonLabel>
       </div>
     </RadioGroup>
-  )
-}
+  );
+};
 
-export default Selector
+export default Selector;

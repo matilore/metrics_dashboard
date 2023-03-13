@@ -14,8 +14,8 @@ const seedUserMetrics = {
       { timestamp: createDateMinusDaysFromNow(3), value: 10500 }
     ]
   },
-  max_rate: {
-    id: 'max_rate',
+  maxRate: {
+    id: 'maxRate',
     list: [
       { timestamp: createDateMinusDaysFromNow(1), value: 140 },
       { timestamp: createDateMinusDaysFromNow(2), value: 135 },

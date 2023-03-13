@@ -29,7 +29,7 @@ export const userMetricsService = {
     }
   },
 
-  addMetric: async ({ metric, email }: IUserMetricParams): Promise<void> => {
+  addMetric: async ({ metric, email }: IUserMetricParams) => {
     try {
       const userMetrics = await UserMetrics.findOne({
         email: email || 'johndoe@example.com'
@@ -53,6 +53,9 @@ export const userMetricsService = {
       metricsToUpdate.list.push(newMetricData)
 
       await userMetrics.save()
+      return UserMetrics.findOne({
+        email: email || 'johndoe@example.com'
+      })
     } catch (error) {
       throw new Error(`Error creating metric: ${(error as Error).message}`)
     }

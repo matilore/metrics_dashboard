@@ -7,6 +7,11 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        loader: "ts-loader",
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: "babel-loader",
@@ -14,11 +19,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
-      },
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        loader: "ts-loader",
       },
     ],
   },
@@ -29,7 +29,7 @@ module.exports = {
       "@components": path.resolve(__dirname, "src/components"),
       "@common": path.resolve(__dirname, "src/common"),
       "@styles": path.resolve(__dirname, "src/styles"),
-      "@utilities": path.resolve(__dirname, "src/utilities"),
+      "@helpers": path.resolve(__dirname, "src/helpers"),
     },
   },
   plugins: [

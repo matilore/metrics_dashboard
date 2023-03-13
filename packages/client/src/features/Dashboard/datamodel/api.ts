@@ -1,13 +1,30 @@
 import axios from "axios";
-import { MetricsInputs } from "@common/Form/contracts";
+import UserMetricsModel from "./model";
+import { RequiredMetricsInputs } from "@features/Dashboard/contracts";
 
-type RequiredMetricsInputs = Required<MetricsInputs>;
+axios.defaults.headers.post["Content-Type"] =
+  "application/x-www-form-urlencoded";
+
+interface UserMetricsModelInterface {
+  averages: { label: string; value: number }[];
+  calories: any;
+  steps: any;
+  maxRate: any;
+  isEmpty: boolean;
+}
 
 export const getMetrics = async () => {
-  const url = `http://localhost:8000/api/metrics`;
-  const metrics = await axios.get(url);
-  console.log("metrics", metrics);
-  return metrics;
+  const url = `http://localhost:8000/api/v1/metrics`;
+  const {
+    data: {
+      response: { metrics },
+    },
+  } = await axios.get(url);
+
+  const formattedMetricsResponse = new UserMetricsModel(metrics);
+  const formattedJSON: UserMetricsModelInterface =
+    formattedMetricsResponse.toJSON();
+  return formattedJSON;
 
   // const { API_URL } = process.env
   // return fetch(`${API_URL}/metrics`).then((res) => {
@@ -17,13 +34,22 @@ export const getMetrics = async () => {
 };
 
 export const putMetrics = async ({
-  metric_id,
-  metric_value,
+  metricId,
+  metricValue,
 }: RequiredMetricsInputs) => {
-  const url = `http://localhost:8000/api/metrics`;
-  const metrics = await axios.put(url, { metric_id, metric_value });
-  console.log("metrics", metrics);
-  return metrics;
+  const url = `http://localhost:8000/api/v1/metrics/update`;
+  const {
+    data: {
+      response: { metrics },
+    },
+  } = await axios.put(url, {
+    id: metricId,
+    value: metricValue,
+  });
+  const formattedMetricsResponse = new UserMetricsModel(metrics);
+  const formattedJSON: UserMetricsModelInterface =
+    formattedMetricsResponse.toJSON();
+  return formattedJSON;
 
   // const { API_URL } = process.env
   // return fetch(`${API_URL}/metrics`).then((res) => {

@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const AverageWrapper = styled.div`
   width: 30%;
@@ -9,39 +9,39 @@ const AverageWrapper = styled.div`
   p:hover {
     cursor: default;
   }
-`
+`;
 
 const LargeText = styled.p`
   font-size: ${({ theme }) => theme.FONT_SIZES.EXTRA_LARGE};
   font-weight: bold;
-`
+`;
 
 interface AverageProps {
-  id: string
-  value: number
+  label: string;
+  value: number;
 }
 
-const Average = ({ id, value }: AverageProps) => {
+const Average = ({ label, value }: AverageProps) => {
   return (
     <AverageWrapper>
-      <p>{id}</p>
+      <b>{label} average</b>
       <LargeText>{value}</LargeText>
     </AverageWrapper>
-  )
-}
+  );
+};
 
 interface AveragesProps {
-  averages: AverageProps[]
+  averages: AverageProps[];
 }
 
 const Averages = ({ averages }: AveragesProps) => {
   return (
     <>
-      {averages.map(({ id, value }) => (
-        <Average id={id} value={value} />
+      {averages.map(({ label, value }) => (
+        <Average key={label} label={label} value={value} />
       ))}
     </>
-  )
-}
+  );
+};
 
-export default Averages
+export default Averages;

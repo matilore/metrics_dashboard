@@ -8,7 +8,7 @@ export const metricDataSchema = new Schema<IMetricData>({
 const metricTypeSchema = new Schema<IUserMetric>({
   id: {
     type: String,
-    enum: ['steps', 'max_rate', 'calories'],
+    enum: ['steps', 'maxRate', 'calories'],
     required: true
   },
   list: [metricDataSchema]
@@ -18,7 +18,7 @@ const metricsSchema = new Schema<IUserMetrics>({
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   metrics: {
     steps: metricTypeSchema,
-    max_rate: metricTypeSchema,
+    maxRate: metricTypeSchema,
     calories: metricTypeSchema
   }
 })

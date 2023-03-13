@@ -1,6 +1,6 @@
 import { Response, Request } from 'express'
 import { StatusCodes, ReasonPhrases } from 'http-status-codes'
-import { IUserMetrics } from '@/contracts'
+import { IUserMetrics, IMetricData } from '@/contracts'
 import { formatUserMetricsResponse } from '@/controllers/helpers'
 
 import { userMetricsService } from '@/services'
@@ -21,7 +21,7 @@ export const userMetricsController = {
         message: ReasonPhrases.OK,
         status: StatusCodes.OK,
         timestamp,
-        data: userMetricsResponse
+        response: userMetricsResponse
       })
     } catch {
       res.status(500).json({ error: 'Internal Server Error' })
@@ -29,23 +29,21 @@ export const userMetricsController = {
   },
 
   postMetrics: async (req: Request, res: Response) => {
-    const { metricName: id, metricValue: value } = req.body
+    const { id, value }: IMetricData = req.body
 
     try {
-      const newMetric = await userMetricsService.addMetric({
+      const updatedMetrics = await userMetricsService.addMetric({
         metric: { id, value }
       })
 
       const timestamp = res.locals.timestamp
-
       return res.status(StatusCodes.CREATED).json({
         message: ReasonPhrases.CREATED,
         status: StatusCodes.CREATED,
         timestamp,
-        data: newMetric
+        response: updatedMetrics
       })
     } catch (err) {
-      console.error(err)
       res.status(500).json({ error: 'Internal Server Error' })
     }
   }

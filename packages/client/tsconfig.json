@@ -20,7 +20,7 @@
     "paths": {
       "@common/*": ["src/common/*"],
       "@features/*": ["src/features/*"],
-      "@utils/*": ["src/utils/*"],
+      "@helpers/*": ["src/helpers/*"],
       "@styles/*": ["src/styles/*"]
     }
   },
