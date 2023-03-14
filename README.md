@@ -12,7 +12,7 @@ Execute the following commands at root level
 npm install
 ```
 
-### API Seed
+### API Seed (_OPTIONAL -> RUN ONLY IF THERE IS NO DATA IN DASHBOARD_)
 
 ```bash
 npm run seed
@@ -200,6 +200,7 @@ npm run build
 ### Technical Considerations
 
 - _I LEFT THE .ENV FILE IN THIS SPECIFIC CASE IN ORDER TO ALLOW THE EASY INSTALL AND USE BY THE REVIEWERS WITHOUT THE NECESSITY OF USING THIRD PARTIES SECRETS MANAGEMENT TOOLS_
+- _THE GET QUERY FETCHES THE 1ST DOCUMENT IN THE COLLECTION, THE SEED FILE WILL GENERATE EACH TIME IS RUNNED A NEW DOCUMENT IN USERMETRICS COLLECTION => IF DATA VARIES FROM 1 ACCESS TO ANOTHER IS BECAUSE IN THE MEANTIME THE SEED SCRIPT HAS BEEN RUNNED AT LEAST ONCE_
 - I decided to use npm workspaces in order to make easier and elegant the install and execution of the 2 different packages.
 - I used a different file structure between api and client because the nature of React make personally easier to manage and segment files per feature and not so much by functionality. In the API you will find main folder encapsuling services, models... in react you could find a datamodel inside the Dashboard main folder. Styles components also appear in different folder hierarchy based on the specificity of its use.
 - I tested few components in the client but i deprioritized the testing of the api.
@@ -209,7 +210,7 @@ npm run build
 - I didn't use any route package or redux because the product didn't required it.
 - I created a PUT route method because in reality the creation of user metrics is donde by the seed file. What the user is doing by interacting is updating the resource.
 - The client uses relative paths for http requests, I added a proxy in the dev server in order to manage this case. The build script is generating an output of client + api in _root/dist_
-- I didn't use different env files because of the simple nature of the application
+- I didn't use different env files for different environments because of the simple nature of the application
 
 ### Product Considerations
 
