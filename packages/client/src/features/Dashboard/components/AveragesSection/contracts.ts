@@ -1,8 +1,8 @@
 export interface AveragesProps {
-  averages: AverageProps[];
+  averages: AverageProps[]
 }
 
 export interface AverageProps {
-  label: string;
-  value: number;
+  label: string
+  value: number
 }

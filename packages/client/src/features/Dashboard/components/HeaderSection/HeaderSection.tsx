@@ -1,24 +1,20 @@
-import React from "react";
-import { Row, Col } from "react-awesome-styled-grid";
-import ModalBody from "@common/Modal";
-import { RequiredMetricsInputs } from "@features/Dashboard/contracts";
+import React from 'react'
+import { Row, Col } from 'react-awesome-styled-grid'
+import ModalBody from '@common/Modal'
+import { RequiredMetricsInputs } from '@features/Dashboard/contracts'
 
-import {
-  StyledHeader,
-  DashboardHeaderWrapper,
-  Button,
-} from "./styleComponents";
+import { StyledHeader, DashboardHeaderWrapper, Button } from './styleComponents'
 
 interface HeaderSectionProps {
-  toggleModal: () => void;
-  isModalOpen: boolean;
-  postNewMetric: ({ metricId, metricValue }: RequiredMetricsInputs) => void;
+  toggleModal: () => void
+  isModalOpen: boolean
+  postNewMetric: ({ metricId, metricValue }: RequiredMetricsInputs) => void
 }
 
 const HeaderSection = ({
   toggleModal,
   isModalOpen,
-  postNewMetric,
+  postNewMetric
 }: HeaderSectionProps) => {
   return (
     <Row>
@@ -35,7 +31,7 @@ const HeaderSection = ({
         </DashboardHeaderWrapper>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default HeaderSection;
+export default HeaderSection

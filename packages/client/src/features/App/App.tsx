@@ -1,8 +1,8 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
-import Dashboard from "@features/Dashboard";
-import GlobalStyle from "@styles/globalStyle";
-import theme from "@styles/theme";
+import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import Dashboard from '@features/Dashboard'
+import GlobalStyle from '@styles/globalStyle'
+import theme from '@styles/theme'
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <GlobalStyle />
       <Dashboard />
     </ThemeProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

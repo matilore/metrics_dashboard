@@ -1,5 +1,1 @@
-export {
-  StyledHeader,
-  DashboardHeaderWrapper,
-  Button,
-} from "./styleComponents";
+export { StyledHeader, DashboardHeaderWrapper, Button } from './styleComponents'

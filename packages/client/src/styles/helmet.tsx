@@ -1,5 +1,5 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React from 'react'
+import { Helmet } from 'react-helmet'
 
 const HelmetFonts = () => (
   <Helmet>
@@ -15,6 +15,6 @@ const HelmetFonts = () => (
       href="https://fonts.googleapis.com/css?family=Montserrat:400&display=swap"
     />
   </Helmet>
-);
+)
 
-export default HelmetFonts;
+export default HelmetFonts

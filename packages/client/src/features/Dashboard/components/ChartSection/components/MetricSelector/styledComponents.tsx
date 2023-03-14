@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const RadioGroup = styled.div`
   display: flex;
   margin: 32px 0;
-`;
+`
 
 export const RadioButton = styled.input`
   display: none;
@@ -11,7 +11,7 @@ export const RadioButton = styled.input`
     color: ${({ theme }) => theme.COLORS.WHITE};
     background-color: ${({ theme }) => theme.COLORS.MOONSTONE};
   }
-`;
+`
 
 export const RadioButtonLabel = styled.label`
   display: flex;
@@ -24,4 +24,4 @@ export const RadioButtonLabel = styled.label`
   cursor: pointer;
   border: 1px solid ${({ theme }) => theme.COLORS.GREY};
   border-radius: 8px;
-`;
+`

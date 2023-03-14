@@ -15,7 +15,8 @@
     "build:client": "npm run build --workspace=packages/client",
     "test:client": "npm run test --workspace=packages/client",
     "start": "concurrently \"npm run start:api\" \"npm run start:client\"",
-    "build": "rm -rf ./dist && npm run build:client && npm run build:api"
+    "build": "rm -rf ./dist && npm run build:client && npm run build:api",
+    "lint": "eslint --debug ./packages/api/src ./packages/client/src"
   },
   "author": "",
   "license": "ISC",

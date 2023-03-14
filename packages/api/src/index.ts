@@ -1,4 +1,6 @@
 import express, { Express } from 'express'
+import winston from 'winston'
+
 import 'dotenv/config'
 
 import { mongoose } from '@/dataSources'
@@ -24,5 +26,5 @@ app.use('/api/v1', router)
 app.use(notFoundMiddleware)
 
 app.listen(process.env.APP_PORT, () => {
-  console.log(`Server running at port ${process.env.APP_PORT}`)
+  winston.log('info', `Server running at port ${process.env.APP_PORT}`)
 })

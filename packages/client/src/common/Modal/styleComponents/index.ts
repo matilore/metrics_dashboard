@@ -1,1 +1,1 @@
-export { StyledModal } from "./styleComponents";
+export { StyledModal } from './styleComponents'

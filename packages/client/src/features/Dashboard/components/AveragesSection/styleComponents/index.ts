@@ -1,5 +1,5 @@
 export {
   AverageWrapper,
   LargeText,
-  AveragesHeaderWrapper,
-} from "./styleComponents";
+  AveragesHeaderWrapper
+} from './styleComponents'

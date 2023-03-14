@@ -1,13 +1,13 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "styled-components";
-import theme from "@styles/theme";
-import Selector from "./Selector";
+import React from 'react'
+import { render, fireEvent } from '@testing-library/react'
+import { ThemeProvider } from 'styled-components'
+import theme from '@styles/theme'
+import Selector from './Selector'
 
-describe("Selector", () => {
-  it("should render radio buttons with labels", () => {
-    const handleOptionChange = jest.fn();
-    const selectedOption = "calories";
+describe('Selector', () => {
+  it('should render radio buttons with labels', () => {
+    const handleOptionChange = jest.fn()
+    const selectedOption = 'calories'
     const { getByLabelText } = render(
       <ThemeProvider theme={theme}>
         <Selector
@@ -15,15 +15,15 @@ describe("Selector", () => {
           handleOptionChange={handleOptionChange}
         />
       </ThemeProvider>
-    );
-    expect(getByLabelText("Calories")).toBeInTheDocument();
-    expect(getByLabelText("Max Rate")).toBeInTheDocument();
-    expect(getByLabelText("Steps")).toBeInTheDocument();
-  });
+    )
+    expect(getByLabelText('Calories')).toBeInTheDocument()
+    expect(getByLabelText('Max Rate')).toBeInTheDocument()
+    expect(getByLabelText('Steps')).toBeInTheDocument()
+  })
 
-  it("should call handleOptionChange on radio button change", () => {
-    const handleOptionChange = jest.fn();
-    const selectedOption = "calories";
+  it('should call handleOptionChange on radio button change', () => {
+    const handleOptionChange = jest.fn()
+    const selectedOption = 'calories'
     const { getByLabelText } = render(
       <ThemeProvider theme={theme}>
         <Selector
@@ -31,12 +31,12 @@ describe("Selector", () => {
           handleOptionChange={handleOptionChange}
         />
       </ThemeProvider>
-    );
-    fireEvent.click(getByLabelText("Max Rate"));
+    )
+    fireEvent.click(getByLabelText('Max Rate'))
     expect(handleOptionChange).toHaveBeenCalledWith(
       expect.objectContaining({
-        target: expect.objectContaining({ value: "maxRate" }),
+        target: expect.objectContaining({ value: 'maxRate' })
       })
-    );
-  });
-});
+    )
+  })
+})

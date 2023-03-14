@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { IsDisabledProps } from "./contracts";
+import styled from 'styled-components'
+import { IsDisabledProps } from './contracts'
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 export const InputField = styled.div`
   margin: 16px 0;
@@ -20,14 +20,14 @@ export const InputField = styled.div`
     font-size: 0.9em;
     margin: 8px 0;
   }
-`;
+`
 
 export const ButtonWrapper = styled.div`
   width: 100%;
   margin: 24px 0;
   display: flex;
   justify-content: center;
-`;
+`
 
 export const StyledForm = styled.form`
   margin-top: 24px;
@@ -36,7 +36,7 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-`;
+`
 
 export const Input = styled.input`
   display: inline-block;
@@ -45,7 +45,7 @@ export const Input = styled.input`
   box-sizing: border-box;
   font-size: 14px;
   padding: 8px;
-`;
+`
 
 export const Select = styled.select`
   width: 100%;
@@ -65,7 +65,7 @@ export const Select = styled.select`
     min-height: 20px;
     padding: 0px 2px 1px;
   }
-`;
+`
 
 export const Button = styled.button<IsDisabledProps>`
   border-radius: 5px;
@@ -77,6 +77,6 @@ export const Button = styled.button<IsDisabledProps>`
   background-color: ${({ theme }) => theme.COLORS.POWDER_BLUE};
   border: none;
   opacity: ${({ disabled }) => {
-    return disabled ? "0.5" : "1";
+    return disabled ? '0.5' : '1'
   }};
-`;
+`

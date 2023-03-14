@@ -1,4 +1,6 @@
 import { User, UserMetrics } from '@/models'
+import winston from 'winston'
+
 import {
   IUserMetric,
   IUserMetrics,
@@ -22,9 +24,9 @@ export const userMetricsService = {
 
       const newMetric = new UserMetrics(newMetricObject)
 
-      const metric = await newMetric.save()
+      await newMetric.save()
     } catch (error) {
-      console.error(error)
+      winston.error(error)
     }
   },
 
@@ -71,7 +73,7 @@ export const userMetricsService = {
 
       return metrics
     } catch (err) {
-      console.error(err)
+      winston.error(err)
       throw err
     }
   }

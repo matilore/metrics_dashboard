@@ -1,14 +1,14 @@
-import React from "react";
-import { RadioGroup, RadioButton, RadioButtonLabel } from "./styledComponents";
+import React from 'react'
+import { RadioGroup, RadioButton, RadioButtonLabel } from './styledComponents'
 
 interface SelectorSectionProps {
-  handleOptionChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  selectedOption: string;
+  handleOptionChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+  selectedOption: string
 }
 
 const Selector = ({
   selectedOption,
-  handleOptionChange,
+  handleOptionChange
 }: SelectorSectionProps) => {
   return (
     <RadioGroup>
@@ -18,7 +18,7 @@ const Selector = ({
           id="calories"
           name="option"
           value="calories"
-          checked={selectedOption === "calories"}
+          checked={selectedOption === 'calories'}
           onChange={handleOptionChange}
         />
         <RadioButtonLabel htmlFor="calories">Calories</RadioButtonLabel>
@@ -29,7 +29,7 @@ const Selector = ({
           id="maxRate"
           name="option"
           value="maxRate"
-          checked={selectedOption === "maxRate"}
+          checked={selectedOption === 'maxRate'}
           onChange={handleOptionChange}
         />
         <RadioButtonLabel htmlFor="maxRate">Max Rate</RadioButtonLabel>
@@ -40,13 +40,13 @@ const Selector = ({
           id="steps"
           name="option"
           value="steps"
-          checked={selectedOption === "steps"}
+          checked={selectedOption === 'steps'}
           onChange={handleOptionChange}
         />
         <RadioButtonLabel htmlFor="steps">Steps</RadioButtonLabel>
       </div>
     </RadioGroup>
-  );
-};
+  )
+}
 
-export default Selector;
+export default Selector

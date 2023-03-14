@@ -1,3 +1,3 @@
 export interface IsDisabledProps {
-  readonly disabled: boolean;
+  readonly disabled: boolean
 }

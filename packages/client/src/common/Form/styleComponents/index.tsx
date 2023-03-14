@@ -5,5 +5,5 @@ export {
   StyledForm,
   Input,
   Select,
-  Button,
-} from "./styledComponents";
+  Button
+} from './styledComponents'

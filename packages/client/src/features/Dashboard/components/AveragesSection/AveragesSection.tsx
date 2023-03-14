@@ -1,8 +1,8 @@
-import React from "react";
-import { Row, Col } from "react-awesome-styled-grid";
-import { AveragesProps } from "./contracts";
-import { Average } from "./components";
-import { AveragesHeaderWrapper } from "./styleComponents";
+import React from 'react'
+import { Row, Col } from 'react-awesome-styled-grid'
+import { AveragesProps } from './contracts'
+import { Average } from './components'
+import { AveragesHeaderWrapper } from './styleComponents'
 
 const Averages = ({ averages }: AveragesProps) => {
   return (
@@ -15,7 +15,7 @@ const Averages = ({ averages }: AveragesProps) => {
         </AveragesHeaderWrapper>
       </Col>
     </Row>
-  );
-};
+  )
+}
 
-export default Averages;
+export default Averages

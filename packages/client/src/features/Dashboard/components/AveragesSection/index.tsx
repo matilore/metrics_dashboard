@@ -1,1 +1,1 @@
-export { default } from "./AveragesSection";
+export { default } from './AveragesSection'

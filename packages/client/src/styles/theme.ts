@@ -1,8 +1,8 @@
-import { FONT_SIZES, COLORS } from "./constants";
+import { FONT_SIZES, COLORS } from './constants'
 
 const theme = {
   COLORS,
-  FONT_SIZES,
-};
+  FONT_SIZES
+}
 
-export default theme;
+export default theme

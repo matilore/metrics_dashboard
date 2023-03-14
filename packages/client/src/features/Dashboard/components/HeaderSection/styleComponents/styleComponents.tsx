@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const StyledHeader = styled.h1`
   width: 100%;
-`;
+`
 
 export const DashboardHeaderWrapper = styled.div`
   height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
+`
 
 export const Button = styled.button`
   color: ${({ theme }) => theme.COLORS.WHITE};
@@ -23,4 +23,4 @@ export const Button = styled.button`
   font-size: ${({ theme }) => theme.FONT_SIZES.MEDIUM};
   cursor: pointer;
   border: none;
-`;
+`

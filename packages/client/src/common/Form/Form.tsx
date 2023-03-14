@@ -1,5 +1,5 @@
-import React from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import React from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import {
   Wrapper,
   InputField,
@@ -7,27 +7,27 @@ import {
   StyledForm,
   Input,
   Select,
-  Button,
-} from "./styleComponents";
-import { MetricsInputs, MetricIds } from "./contracts";
+  Button
+} from './styleComponents'
+import { MetricsInputs, MetricIds } from './contracts'
 
 export default function Form({
-  postNewMetric,
+  postNewMetric
 }: {
-  postNewMetric: (data: any) => void;
+  postNewMetric: (data: any) => void
 }) {
   const {
     register,
     handleSubmit,
-    formState: { isValid },
+    formState: { isValid }
   } = useForm({
     defaultValues: {
       metricId: undefined,
-      metricValue: undefined,
-    },
-  });
+      metricValue: undefined
+    }
+  })
 
-  const onSubmit: SubmitHandler<MetricsInputs> = (data) => postNewMetric(data);
+  const onSubmit: SubmitHandler<MetricsInputs> = data => postNewMetric(data)
 
   return (
     <Wrapper>
@@ -37,8 +37,8 @@ export default function Form({
         <InputField>
           <label>Metric</label>
           <Select
-            {...register("metricId", {
-              required: "error message",
+            {...register('metricId', {
+              required: 'error message'
             })}
           >
             <option disabled selected>
@@ -53,8 +53,8 @@ export default function Form({
           <label>Metric value</label>
 
           <Input
-            {...register("metricValue", {
-              required: "error message",
+            {...register('metricValue', {
+              required: 'error message'
             })}
             type="number"
             placeholder="metric value"
@@ -67,5 +67,5 @@ export default function Form({
         </ButtonWrapper>
       </StyledForm>
     </Wrapper>
-  );
+  )
 }

@@ -1,1 +1,1 @@
-export { StyledContainer } from "./styleComponents";
+export { StyledContainer } from './styleComponents'
