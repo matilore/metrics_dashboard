@@ -14,7 +14,6 @@ module.exports = merge(common, {
       "/api": {
         target: "http://localhost:3000",
         router: () => "http://localhost:8000",
-        logLevel: "debug" /*optional*/,
       },
     },
   },

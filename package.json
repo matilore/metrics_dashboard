@@ -3,18 +3,27 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "16.19.1",
+    "npm": "8.19.3"
+  },
   "scripts": {
     "seed": "npm run seed --workspace=api",
     "start:api": "npm run start --workspace=api",
     "build:api": "npm run build --workspace=api",
     "start:client": "npm run start --workspace=packages/client",
     "build:client": "npm run build --workspace=packages/client",
-    "test:client": "npm run test --workspace=packages/client"
+    "test:client": "npm run test --workspace=packages/client",
+    "start": "concurrently \"npm run start:api\" \"npm run start:client\"",
+    "build": "rm -rf ./dist && npm run build:client && npm run build:api"
   },
   "author": "",
   "license": "ISC",
   "workspaces": [
     "packages/api",
     "packages/client"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
