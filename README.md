@@ -209,6 +209,7 @@ npm run build
 - I didn't use any route package or redux because the product didn't required it.
 - I created a PUT route method because in reality the creation of user metrics is donde by the seed file. What the user is doing by interacting is updating the resource.
 - The client uses relative paths for http requests, I added a proxy in the dev server in order to manage this case. The build script is generating an output of client + api in _root/dist_
+- I didn't use different env files because of the simple nature of the application
 
 ### Product Considerations
 
