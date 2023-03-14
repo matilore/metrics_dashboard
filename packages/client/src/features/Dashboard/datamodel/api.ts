@@ -1,9 +1,6 @@
-import axios from "axios";
+import axios from "@config/axios";
 import UserMetricsModel from "./model";
 import { RequiredMetricsInputs } from "@features/Dashboard/contracts";
-
-axios.defaults.headers.post["Content-Type"] =
-  "application/x-www-form-urlencoded";
 
 interface UserMetricsModelInterface {
   averages: { label: string; value: number }[];
@@ -14,7 +11,7 @@ interface UserMetricsModelInterface {
 }
 
 export const getMetrics = async () => {
-  const url = `http://localhost:8000/api/v1/metrics`;
+  const url = `/api/v1/metrics`;
   const {
     data: {
       response: { metrics },
@@ -25,19 +22,13 @@ export const getMetrics = async () => {
   const formattedJSON: UserMetricsModelInterface =
     formattedMetricsResponse.toJSON();
   return formattedJSON;
-
-  // const { API_URL } = process.env
-  // return fetch(`${API_URL}/metrics`).then((res) => {
-  //   console.log(res)
-  //   return res
-  // })
 };
 
 export const putMetrics = async ({
   metricId,
   metricValue,
 }: RequiredMetricsInputs) => {
-  const url = `http://localhost:8000/api/v1/metrics/update`;
+  const url = `/api/v1/metrics/update`;
   const {
     data: {
       response: { metrics },
@@ -50,10 +41,4 @@ export const putMetrics = async ({
   const formattedJSON: UserMetricsModelInterface =
     formattedMetricsResponse.toJSON();
   return formattedJSON;
-
-  // const { API_URL } = process.env
-  // return fetch(`${API_URL}/metrics`).then((res) => {
-  //   console.log(res)
-  //   return res
-  // })
 };

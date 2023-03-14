@@ -14,7 +14,7 @@ export const DashboardHeaderWrapper = styled.div`
 export const Button = styled.button`
   color: ${({ theme }) => theme.COLORS.WHITE};
   width: 160px;
-  height: 40px;
+  height: 50px;
   left: 1013px;
   top: 118px;
   background: ${({ theme }) => theme.COLORS.MOONSTONE};

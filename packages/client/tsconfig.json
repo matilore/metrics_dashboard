@@ -9,21 +9,22 @@
     "jsx": "react",
     "lib": ["esnext", "dom"],
     "allowJs": true,
-    "forceConsistentCasingInFileNames": true, //optional
-    "strict": true, //optional
-    "skipLibCheck": true, //optional
-    "allowSyntheticDefaultImports": true, //optional
-    "resolveJsonModule": true, //optional
-    "removeComments": true, //optional
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
     "baseUrl": "./",
     "paths": {
       "@common/*": ["src/common/*"],
       "@features/*": ["src/features/*"],
       "@helpers/*": ["src/helpers/*"],
-      "@styles/*": ["src/styles/*"]
+      "@styles/*": ["src/styles/*"],
+      "@config/*": ["src/config/*"]
     },
     "types": ["jest", "@types/jest", "@testing-library/jest-dom", "node"]
   },
   "include": ["src/**/*", "customTypes.d.ts"],
-  "exclude": ["node_modules", "dist", "./tests/cypress", "./cypress.config.ts"]
+  "exclude": ["node_modules", "dist"]
 }

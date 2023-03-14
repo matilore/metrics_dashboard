@@ -23,7 +23,6 @@ export const userMetricsService = {
       const newMetric = new UserMetrics(newMetricObject)
 
       const metric = await newMetric.save()
-      console.log('Metric created successfully:', metric)
     } catch (error) {
       console.error(error)
     }

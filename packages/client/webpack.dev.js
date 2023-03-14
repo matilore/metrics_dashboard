@@ -10,5 +10,12 @@ module.exports = merge(common, {
   },
   devServer: {
     port: 3000,
+    proxy: {
+      "/api": {
+        target: "http://localhost:3000",
+        router: () => "http://localhost:8000",
+        logLevel: "debug" /*optional*/,
+      },
+    },
   },
 });
