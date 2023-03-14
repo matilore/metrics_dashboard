@@ -1,3 +1,13 @@
+export interface MetricsData {
+  id: string;
+  list: ListData[];
+}
+
+interface ListData {
+  timestamp: string;
+  value: number;
+}
+
 export const capitalizeFirstLetter = (string: string): string =>
   string.charAt(0).toUpperCase() + string.slice(1);
 
@@ -8,9 +18,9 @@ export const replaceCamelCaseWithSpace = (metricId: string): string => {
 };
 
 export const formatMetricId = (id: string) =>
-  replaceCamelCaseWithSpace(capitalizeFirstLetter(id));
+  capitalizeFirstLetter(replaceCamelCaseWithSpace(id));
 
-export const parseMetrics = (metric: { id: string; list: [] }) => {
+export const parseMetrics = (metric: MetricsData) => {
   return {
     metricId: metric.id,
     labels: metric.list.map(({ timestamp }: { timestamp: string }) =>

@@ -9,7 +9,7 @@
     "build:api": "npm run build --workspace=api",
     "start:client": "npm run start --workspace=packages/client",
     "build:client": "npm run build --workspace=client",
-    "test": "jest"
+    "test": "jest --config=jest.config.js"
   },
   "author": "",
   "license": "ISC",
