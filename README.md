@@ -33,7 +33,7 @@ npm run build
 ## API Endpoints
 
 - GET: <http://localhost:8000/api/v1/metrics> Get user metrics
-- PUT: <http://localhost:8000/api/v1/metrics/update> Get user metrics
+- PUT: <http://localhost:8000/api/v1/metrics/update> Add user metrics
 
 ## Client Endpoints
 
